@@ -371,7 +371,9 @@ function _get_configs_for_mingw(package, configs, opt)
     -- @see https://github.com/xmake-io/xmake/issues/2037
     envs.CMAKE_FIND_ROOT_PATH      = sdkdir
     ]]
+    print("sdkdir", sdkdir)
     envs.CMAKE_SYSROOT             = sdkdir
+    os.exit()
     envs.CMAKE_FIND_ROOT_PATH_MODE_LIBRARY = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_INCLUDE = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_PROGRAM = "NEVER"
