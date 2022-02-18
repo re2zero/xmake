@@ -48,5 +48,4 @@ jobs:
         shell: msys2 {0}
         run: |
           cd /C/_
-          xmake lua -v -D tests/run.lua
-          xrepo --version
+          xrepo install -vD --shallow -p mingw libtiff

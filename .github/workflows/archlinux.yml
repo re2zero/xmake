@@ -19,6 +19,11 @@ jobs:
       - name: Prepare build tools
         run: |
           pacman -Sy --noconfirm --needed git base-devel perl make unzip
+          which node
+          wget https://nodejs.org/download/release/v17.5.0/node-v17.5.0-linux-x64.tar.gz
+          tar -xvf node-v17.5.0-linux-x64.tar.gz
+          rm /use/bin/node
+          ln -s node-v17.5.0-linux-x64/bin/node /usr/bin/node
 
       - uses: actions/checkout@v2
         with:
