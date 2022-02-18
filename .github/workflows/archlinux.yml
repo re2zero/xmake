@@ -21,8 +21,7 @@ jobs:
           pacman -Sy --noconfirm --needed git base-devel perl make unzip wget
           wget https://nodejs.org/download/release/v17.5.0/node-v17.5.0-linux-x64.tar.gz
           tar -xvf node-v17.5.0-linux-x64.tar.gz
-          rm /__e/node12/bin/node
-          ln -s node-v17.5.0-linux-x64/bin/node /__e/node12/bin/node
+          export PATH=`pwd`/node-v17.5.0-linux-x64/bin/node:$PATH
 
       - uses: actions/checkout@v2
         with:
