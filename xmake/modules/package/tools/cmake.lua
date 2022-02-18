@@ -360,7 +360,6 @@ function _get_configs_for_mingw(package, configs, opt)
     envs.CMAKE_LINKER              = _translate_bin_path(package:build_getenv("ld"))
     envs.CMAKE_RANLIB              = _translate_bin_path(package:build_getenv("ranlib"))
     envs.CMAKE_RC_COMPILER         = _translate_bin_path(package:build_getenv("mrc"))
-    ]]
     envs.CMAKE_C_FLAGS             = _get_cflags(package, opt)
     envs.CMAKE_CXX_FLAGS           = _get_cxxflags(package, opt)
     envs.CMAKE_ASM_FLAGS           = _get_asflags(package, opt)
@@ -375,6 +374,7 @@ function _get_configs_for_mingw(package, configs, opt)
     envs.CMAKE_FIND_ROOT_PATH_MODE_LIBRARY = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_INCLUDE = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_PROGRAM = "NEVER"
+    ]]
     -- avoid add -isysroot on macOS
     envs.CMAKE_OSX_SYSROOT = ""
     -- Avoid cmake to add the flags -search_paths_first and -headerpad_max_install_names on macOS
