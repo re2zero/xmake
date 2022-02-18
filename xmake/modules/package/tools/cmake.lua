@@ -367,11 +367,11 @@ function _get_configs_for_mingw(package, configs, opt)
     envs.CMAKE_EXE_LINKER_FLAGS    = _get_ldflags(package, opt)
     envs.CMAKE_SHARED_LINKER_FLAGS = _get_shflags(package, opt)
     envs.CMAKE_SYSTEM_NAME         = "Windows"
-    ]]
     -- avoid find and add system include/library path
     -- @see https://github.com/xmake-io/xmake/issues/2037
     envs.CMAKE_FIND_ROOT_PATH      = sdkdir
     envs.CMAKE_SYSROOT             = sdkdir
+    ]]
     envs.CMAKE_FIND_ROOT_PATH_MODE_LIBRARY = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_INCLUDE = "ONLY"
     envs.CMAKE_FIND_ROOT_PATH_MODE_PROGRAM = "NEVER"
