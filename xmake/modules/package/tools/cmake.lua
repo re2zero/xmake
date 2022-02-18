@@ -352,6 +352,7 @@ function _get_configs_for_mingw(package, configs, opt)
     opt.cross                      = true
     local envs                     = {}
     local sdkdir                   = package:build_getenv("mingw") or package:build_getenv("sdk")
+    --[[
     envs.CMAKE_C_COMPILER          = _translate_bin_path(package:build_getenv("cc"))
     envs.CMAKE_CXX_COMPILER        = _translate_bin_path(package:build_getenv("cxx"))
     envs.CMAKE_ASM_COMPILER        = _translate_bin_path(package:build_getenv("as"))
@@ -359,6 +360,7 @@ function _get_configs_for_mingw(package, configs, opt)
     envs.CMAKE_LINKER              = _translate_bin_path(package:build_getenv("ld"))
     envs.CMAKE_RANLIB              = _translate_bin_path(package:build_getenv("ranlib"))
     envs.CMAKE_RC_COMPILER         = _translate_bin_path(package:build_getenv("mrc"))
+    ]]
     envs.CMAKE_C_FLAGS             = _get_cflags(package, opt)
     envs.CMAKE_CXX_FLAGS           = _get_cxxflags(package, opt)
     envs.CMAKE_ASM_FLAGS           = _get_asflags(package, opt)
